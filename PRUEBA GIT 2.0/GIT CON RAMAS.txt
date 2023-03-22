@@ -35,7 +35,7 @@ CREAR NUEVAS RAMAS (Como la rama Master)
 (ROJO-REMOTO _ VERDE/BLANCO-LOCAL)
 
 -Ramas nuevas: paralelo a master donde se trabajara el codigo, mientras que en master se encontraran las versiones finales
-para no afectar a master. 
+para no afectar a master.  
 -A su vez estas mismas ramas pueden tener otras ramas (Como subprogramas) que realicen tareas especificas
 (Estas pueden ser para en un Grupo, cada integrante tiene su rama para Trabajar. Una vez terminado, enviar a "develop")
 
@@ -48,3 +48,72 @@ todas las ramas a la carpeta de <Nombre> y todas seran el nombre de la <tarea> (
 -git diff : Nos muestras lo nuevo o diferencias
 Repetir pasos para enviar archivos a la nueva Rama (Como en Master)
 Mantiene los archivos de la primera rama, pero los cambios se realizan desde la nueva rama
+
+
+REALIZAR MERGE / COMBINACION DE RAMAS A LA MASTER
+-git checkout <rama a la que quiero recibir el merch>
+-git pull origin <rama en donde nos posicionamos> : Por si hubo algun cambio en esta
+-git merge <la rama que queremos recibir> 
+
+Si ocurre un error por cambio, es mejor git add . 
+-git diff : verificamos los cambios
+-git commit -m : Guardamos el Checkpoint
+-git push origin <la rama donde estamos>
+Si hay problemas de duplicado podemos ir a donde esta el conflicto(Parte verde, una vez)
+o simplemente arriegar con git checkout -- .
+-git status - git commit
+
+REPETIMOS
+-git merge <la rama que queremos recibir>
+Ahi tendriamos el MERGE inicializado si se encuentra todo en orden
+-git push origin <rama donde estamos>: cambios realizados/Mezclados
+
+Ahora guiar la rama hacia el Master
+-Para eso vamos al GITHUB a Pull request - New - (Realizamos el cambio de que rama a que rama)
+-Create - (Podemos crear mensaje) - Confirmar Merge
+Y si salio bien, vamos a Master y los cambios tendrian que estar realizados
+
+EXTRAS DE LA GUIA NO MENCIONADOS
+
+-git show-branch: nos muestra cada rama y sus commits
+-git checkout -b <nombre-de-tu-rama>: Con esto no solo creamos una rama en un punto
+del commit, si no que nos posicionamos en la misma (Para no realizar el checkout, add y commit)
+-git push origin -u <nombre-de-tu-rama> : Con el -u podemos saltearnos
+el siempre escribir el origin a la rama, y al escribirlo por primera vez
+simplemente podemos escribir git push, y nos guiara a esa rama
+-git merge ramagit -m “Esto es un merge con mensaje” : Los merge como los commit, 
+necesitan mensajes para que sean realizados
+
+PULL REQUEST
+En este podemos ver cuantos commits (cambios) son los que
+separan a otra rama de main. Nos pueden salir dos ceros, pero si main estuviera un commit
+por delante de alguna rama saldrían un uno en el cero de la izquierda y asi se incrementa el
+numero según la cantidad de commits que este por delante main. Ahora, si el numero estuviera a
+la derecha, sería que la otra rama está x commits por delante main.
+
+Por otro lado, podemos usar la pestaña de “Files changed” para hacer code review.
+Si detectamos alguna línea de código que requiera cambios puedes clickear sobre ella y agregar
+un comentario para que el autor del pull request lo modifique. No es necesario volver a crear un
+nuevo pull request para actualizar los cambios, simplemente haciendo un commit sobre el branch
+es suficiente, GitHub toma los cambios y actualiza el pull request automáticamente.
+
+SINTAXIS PULL
+git pull <nombre-remoto> <nombre-de-tu-rama>
+Nombre-remoto: es el nombre de tu repositorio remoto. Por ejemplo: origin.
+Nombre-de-tu-rama: es el nombre de tu rama. Por ejemplo: develop.
+Por ejemplo:
+git pull origin ramaGit
+
+BORRAR RAMAS
+-git branch -d <rama-a-borrar> LOCAL(Pero simplemente si guardamos todos los cambios en remoto)
+-git branch -D <rama-a-borrar> REMOTO (Para forzar el borrado en el REMOTO y no se recuperan mas)
+ELIMINAR UN BRANCH EN REMOTO
+Si la rama que queremos eliminar está en el repositorio remoto, la operativa es un poco diferente.
+Tenemos que hacer un push, indicando la opción --delete, seguida de la rama que se desea
+borrar.
+git push origin --delete <rama-a-borrar>
+
+PARA QUE COLABOREN EN UN MISMO REPOSITORIO
+-Ir a configuracion - a manage access - invite a collaborator - teclear el nombre de usuario
+-al invitarlo se le enviara un correo que le permitira tener acceso al Repositorio y cambiarlo
+(En pendientes caduca a los 7 dias)
