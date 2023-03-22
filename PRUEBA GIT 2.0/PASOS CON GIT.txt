@@ -1,0 +1,33 @@
+PASOS DE GIT Y GITHUB
+1- GITHUB, Crear un REPOSITORIO QUE sera nuestro ORIGIN y que guardara los ARCHIVOS LOCALES a uno REMOTO
+2- CREAR TOKEN, PALABRA CLAVE PARA ACTIVAR EN EL GIT
+3- EN EL GIT SE CHECKEA LA VERSION CON "git --version"
+4- "git config --list", nos aparecera una lista util y al final se visualizara nuestro Usuario y Correo, 
+si no se ve Revisa la GUIA
+5- q= QUIT
+6- Crear una Carpeta en el Escritorio o donde gustes que sera lo que pasara al repositorio remotos + archivos
+7- Click derecho a la Carpeta y "Git Bash Here"
+8- "git init" Sera para crear un repositorio vacio para vincular, solo sera necesario escribirlo una vez
+9- Ahora lo tengo como una rama Master para que se vincule con el Github, pero si quiero pasarlo a un Main "git brach -M main"
+10- "git remote add origin URL" - Se vinculara aquella carpeta con el Repositorio Creador en GITHUB con el URL de la misma
+11- ATAJO PARA GIT: shift+insert - Para Pegar Texto copiado
+12- "git remote -v" - Les dice que esta enlazado
+!3- "git status" - Sirve para verificar que cambios se estan realizando en la carpeta
+14- Si un archivo es nuevo, le saldra rojo(No agregado), y para que sea Verde(Agregado)
+seria "git add (Nombre del Archivo)" o si son muchos archivos de una "git add."
+15- Otravez el paso 14, y de ahi Crear Commit como Puntos de Guardado de cada version o cambio que hacemos
+"git commit -m "Algun Mensaje" " (Recomendable que sea con numeracion de versiones, tipo version1-2-3....etc)
+16- De nuevo el paso 14, y se vera que estara limpio, y sin ningun archivo, dado que ya se encuentra guardado
+17- Y lo importante "git push origin main o master", sera para enviarlo al Github y que se visualice ahi 
+Saldra una ventana de Usuario y Contraseña, y al ultimo sera ingresar el TOKEN que creamos
+18- Entonces reiniciamos el Github y ya se podria Visualizar
+
+CLONAR
+1- Podemos facilmente descargar archivos de GITHUB, pero aquellos no seran utilizables para hacerles 
+cambios e importarlos de nuevo al GITHUB automaticamente. Si no que existe algo que es Clonar
+Con el URL de cualquier archivo de algun Repositorio de Compañeros o nuestro Equipo
+vamos al git y ingresamos "git clone URL", y aparecera la carpeta lista para utilizar 
+en la carpeta que seleccionamos con el GIT BASH
+
+2- Dependiendo cada Carpeta podemos enviar todas a un mismo repositorio, o si no crear uno nuevo 
+y vincular otras carpetas y el git clone te lo llevara a la ultima ingresada

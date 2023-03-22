@@ -1,0 +1,50 @@
+TENIENDO EN CUENTO LOS PASOS YA HECHOS EN GIT:
+-git --version:
+-git config --global user.name “Nombre”
+-git config --global user.email "Correo"
+-git config --list
+------------------------
+-git init: Para iniciar el trackeo de los archivos de una carpeta.
+-git remote add origin <url>: Para enviar ese traketeo de la carpeta 
+a un repositorio remoto en Github con la URL
+-git status: Nos da toda la información necesaria sobre la ram actual.
+-git add <archivo>/.: Para incluir los cambios del o de los archivos en tu siguiente commit.
+-git commit -m "mensaje de confirmación": Es como establecer un punto de control en el proceso de 
+desarrollo al cual puedes volver más tarde si es necesario. 
+Es como un punto de guardado en unvideojuego.
+-git push: Enviar archivos incluidos en el commit al repositorio local.
+-git push origin: Enviar archivos incluidos en el commit al repositorio
+remoto.
+-git clone <url> . : Clona algun repositorio de Github con la URL en la Carpeta seleccionada.
+
+
+SE NOS INTRODUCEN NUEVOS COMANDOS PARA MANEJAR EL GIT:
+
+MOVERSE ENTRE COMMITS
+-git log : Nos mostraran la cantidad de Puntos de Guardado(commit). Como Historial
+-git checkout <el codigo del Commit que queremos regresar> : Nos traera al Commit que queremos
+-git checkout -- . : Esto borrara todo el Proceso/ Descartar cambios que realizamos y no guardamos (Usar con cuidado)
+-clear : Limpia la pantalla 
+-git checkout master : Nos devuelve al commit actual/presente/Cabecera
+
+
+CREAR NUEVAS RAMAS (Como la rama Master)
+-Creamos una nueva Rama "develop", dentro de nuestra master/original
+-git fetch : Nos actualiza cada rama que es creada
+-git branch -a : Nos muestra las distintas ramas que tenemos 
+(ROJO-REMOTO _ VERDE/BLANCO-LOCAL)
+
+-Ramas nuevas: paralelo a master donde se trabajara el codigo, mientras que en master se encontraran las versiones finales
+para no afectar a master. 
+-A su vez estas mismas ramas pueden tener otras ramas (Como subprogramas) que realicen tareas especificas
+(Estas pueden ser para en un Grupo, cada integrante tiene su rama para Trabajar. Una vez terminado, enviar a "develop")
+
+-git checkout <rama>: Para cambiar de Rama
+-git branch feature/nombre/tarea : Con esto,creamos las rama a trabajar. Creamos "Feature" quiere decir encapsular
+todas las ramas a la carpeta de <Nombre> y todas seran el nombre de la <tarea> (REPOSITORIO LOCAL/BLANCO)
+-git checkout feature/nombre/tarea : Cambiamos de rama
+-git push origin feature/nombre/tarea : Enviamos la nueva rama al Repositorio Remoto(GITHUB)
+(Teniendo los mismos cambios que Develop/master)
+-git diff : Nos muestras lo nuevo o diferencias
+Repetir pasos para enviar archivos a la nueva Rama (Como en Master)
+Mantiene los archivos de la primera rama, pero los cambios se realizan desde la nueva rama
