@@ -17,8 +17,6 @@ public class Ejercicio1 {
     int suma;
     suma = num1 + num2;
     System.out.println("LA SUMA ES: " + suma);
-    System.out.println("****");
-    System.out.println("****");
     }
     
 }
